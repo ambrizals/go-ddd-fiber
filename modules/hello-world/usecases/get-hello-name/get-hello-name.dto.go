@@ -1,11 +1,11 @@
 package get_hello_name
 
-type Response struct {
+type GetHelloNameResponse struct {
 	Body struct {
 		Message string `json:"message" example:"Hello, world!" doc:"Greeting message"`
 	}
 }
 
-type Request struct {
+type GetHelloNameRequest struct {
 	Name string `path:"name" maxLength:"30" example:"world" doc:"Name to greet"`
 }

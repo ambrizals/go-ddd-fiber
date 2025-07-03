@@ -8,7 +8,7 @@ import (
 	"net/http"
 )
 
-func HelloWorldHandler(ctx context.Context, input *struct{}) (*get_hello_world.Response, error) {
+func HelloWorldHandler(_ context.Context, _ *struct{}) (*get_hello_world.GetHelloWorldResponse, error) {
 	resp, err := GetHelloWorldUseCase()
 	if err != nil {
 		return nil, err
@@ -17,8 +17,8 @@ func HelloWorldHandler(ctx context.Context, input *struct{}) (*get_hello_world.R
 	return &resp, nil
 }
 
-func HelloNameHandler(ctx context.Context, input *get_hello_name.Request) (*get_hello_name.Response, error) {
-	resp := get_hello_name.Response{}
+func HelloNameHandler(_ context.Context, input *get_hello_name.GetHelloNameRequest) (*get_hello_name.GetHelloNameResponse, error) {
+	resp := get_hello_name.GetHelloNameResponse{}
 	resp.Body.Message = "Hello, " + input.Name
 	return &resp, nil
 }

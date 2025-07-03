@@ -9,6 +9,6 @@ var (
 	repo = repository.NewHelloWorldRepository()
 )
 
-func GetHelloWorldUseCase() (get_hello_world.Response, error) {
+func GetHelloWorldUseCase() (get_hello_world.GetHelloWorldResponse, error) {
 	return get_hello_world.Execute(repo)
 }

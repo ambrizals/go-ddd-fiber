@@ -1,13 +1,11 @@
 package get_hello_world
 
-import (
-	repository "github.com/ambrizals/go-ddd-fiber/modules/hello-world/repository"
-)
+import "github.com/ambrizals/go-ddd-fiber/modules/hello-world/repository"
 
-func Execute(authRepository repository.HelloWorldRepository) (Response, error) {
-	res := authRepository.GetHelloWorld()
+func Execute(helloWorldRepository repository.HelloWorldRepository) (GetHelloWorldResponse, error) {
+	res := helloWorldRepository.GetHelloWorld()
 
-	resp := Response{}
+	resp := GetHelloWorldResponse{}
 	resp.Body.Message = res
 	return resp, nil
 }
